@@ -1,0 +1,45 @@
+
+
+<div class="container" tiles:fragment="content">
+
+<form id="exampleForm" method="POST" th:action="@{/aceptarExample.htm}" th:object="${exampleForm}">
+	<div class="page-header">
+		<h2>Titulo</h2>
+
+	</div>
+	
+	 <ul class="list-unstyled"  th:if="${#fields.hasErrors('*')}" >
+	  <li class="alert alert-danger" th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+	</ul> 
+	<fieldset>
+		
+			
+
+
+
+
+	</fieldset>
+	<div class="container">
+	
+	</div>
+</form>
+
+<script  type="text/javascript" th:inline="javascript">
+
+</script>
+</div>
+
+
+
+
+	
+				
+			
+					
+					
+					
+					
+					
+
+			
+		

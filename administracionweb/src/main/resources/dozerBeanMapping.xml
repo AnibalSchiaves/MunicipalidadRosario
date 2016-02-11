@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+   
+   <configuration>
+     <relationship-type>non-cumulative</relationship-type>
+    
+   
+  </configuration>
+      <mapping >
+	   	<class-a >ar.gov.rosario.administracionweb.model.Example</class-a>
+	    <class-b >ar.gov.rosario.administracionweb.form.ExampleForm</class-b>
+   		
+<!-- 		<field> -->
+<!-- 	   		<a></a> -->
+<!-- 	      	<b></b> -->
+<!-- 		</field> -->
+		
+   	
+   </mapping>
+   <mapping >
+	   	<class-a >ar.gov.rosario.administracionweb.model.EstructuraTipo</class-a>
+	    <class-b >ar.gov.rosario.administracionweb.form.EstructuraTipoForm</class-b>
+   		
+<!-- 		<field> -->
+<!-- 	   		<a></a> -->
+<!-- 	      	<b></b> -->
+<!-- 		</field> -->
+		
+   	
+   </mapping>
+   <mapping >
+	   	<class-a >ar.gov.rosario.administracionweb.model.ContactoEstructura</class-a>
+	    <class-b >ar.gov.rosario.administracionweb.form.ContactoEstructuraForm</class-b>
+   </mapping>
+</mappings>

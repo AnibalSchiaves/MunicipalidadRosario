@@ -1,0 +1,55 @@
+<div tiles:fragment="form">
+	<div class="row form-group">
+		<div class="col-md-2">
+			<label>C&oacute;digo:</label>
+			<input th:if="${form.modo=='alta'}" id="codigo" class="form-control" maxlength="11" name="id" th:field="${form.id}" value="" type="text"/>		
+			<label th:if="${form.modo!='alta'}" name="codigo" th:text="${form.id}" value="" />
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-10">
+			<label>Apellido y Nombre o denominaci&oacute;n:</label>
+			<input id="nombre" class="form-control" maxlength="40" name="nombre" th:disabled="${form.modo=='eliminacion'}" th:field="${form.nombre}" value="" type="text"/>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-10">
+			<label>E-mail:</label>
+			<input id="email" class="form-control" maxlength="30" name="email" th:disabled="${form.modo=='eliminacion'}" th:field="${form.email}" value="" type="text"/>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" tiles:fragment="script">
+$('#form').bootstrapValidator({
+   	message: 'No es un valor válido',
+   	feedbackIcons: {
+       	valid: 'glyphicon glyphicon-ok',
+       	invalid: 'glyphicon glyphicon-remove',
+       	validating: 'glyphicon glyphicon-refresh'
+   	},
+   	fields: {
+   		nombre: {
+       		validators: {
+               	notEmpty: {
+                   	message: 'El campo apellido debe ser ingresado'
+               	},
+           	}
+       	},
+       	id: {
+           	validators: {
+               	notEmpty: {
+                   	message: 'El campo código debe ser ingresado'
+               	},
+           	}
+       	},
+       	email: {
+       		validators: {
+       			notEmpty: {
+       				message: 'El campo email debe ser ingresado'
+       			}
+       		}
+       	}
+       	
+   	}
+   });
+</script>

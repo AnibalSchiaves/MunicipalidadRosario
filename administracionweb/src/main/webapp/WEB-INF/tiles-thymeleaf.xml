@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+	
+<tiles-definitions>
+	
+	<!-- 
+	<definition name="standardLayout" template="/layouts/template.html">
+		<put-attribute name="header" value="/common/header.html" type="thymeleaf" />
+		<put-attribute name="footer" value="/common/footer.html" type="thymeleaf" />
+	</definition>
+	 -->
+
+	<definition name="standardLayout" template="/layouts/standard.html" templateType="thymeleaf"/>
+	<definition name="standardLayoutGrilla" template="/layouts/standard_grilla.html" templateType="thymeleaf"/>
+	<definition name="standardLayoutABM" template="/layouts/standard_abm.html" templateType="thymeleaf"/>
+	
+	<definition name="ajaxLayout" template="/layouts/ajax.html" templateType="thymeleaf"/>
+
+<!-- 
+	<definition name="*/*" extends="standardLayout">
+		<put-attribute name="body" value="/thymeleaf/{1}/{2}.html" type="thymeleaf" />
+	</definition>
+ -->
+
+<!-- 
+	<definition name="*" extends="standardLayout" templateType="thymeleaf">
+		<put-attribute name="body" value="/thymeleaf/{1}.html" type="thymeleaf" />
+ -->
+ 
+ 	<definition name="ajax/*" extends="ajaxLayout">
+		<put-attribute name="body" value="/pages/{1}.html :: content" type="thymeleaf" />
+	</definition>
+	
+	<definition name="*/list" extends="standardLayoutGrilla">
+		<put-attribute name="header" value="/pages/{1}/list.html :: header" type="thymeleaf" />
+		<put-attribute name="body" value="/pages/{1}/list.html :: body" type="thymeleaf" />
+	</definition>
+	
+	<definition name="*/edit" extends="standardLayoutABM">
+		<put-attribute name="form" value="/pages/{1}/edit.html :: form" type="thymeleaf" />
+		<put-attribute name="script" value="/pages/{1}/edit.html :: script" type="thymeleaf" />
+	</definition>
+	
+	<definition name="*" extends="standardLayout">
+		<put-attribute name="body" value="/pages/{1}.html :: content" type="thymeleaf" />
+	</definition>
+	
+
+</tiles-definitions>

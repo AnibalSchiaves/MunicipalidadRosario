@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.rosario.gov.ar/Tramitesweb/schema"
+    xmlns:tns="http://www.rosario.gov.ar/Tramitesweb/schema"
+    elementFormDefault="qualified"
+    xmlns:QTribunal="http://www.rosario.gov.ar/Tramitesweb/schema">
+
+    <element name="auditarTramiteWebRequest">
+        <complexType>
+            <sequence>
+            	
+                <element name="tramiteWeb" type="QTribunal:TramiteWebWS"></element>                
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="auditarTramiteWebResponse">
+        <complexType>
+            <sequence>
+            	<element name="resultado" type="boolean"></element>
+               
+               
+            </sequence>
+        </complexType>
+    </element>
+    
+     <element name="auditarConsultaRequest">
+        <complexType>
+            <sequence>
+            	<element name="infoConsulta" type="QTribunal:InfoConsultaWS">
+            	</element>
+                 
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="auditarConsultaResponse">
+        <complexType>
+            <sequence>
+            	<element name="resultado" type="boolean"></element>
+               
+               
+            </sequence>
+        </complexType>
+    </element>
+    
+     <element name="testRequest">
+        <complexType>
+            <sequence>
+            	<element name="param" type="string"></element>                                
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="testResponse">
+        <complexType>
+            <sequence>
+                <element name="res" type="string"></element>
+               
+            </sequence>
+        </complexType>
+    </element>
+
+
+	<complexType name="TramiteWebWS">
+		<sequence>
+
+			<element name="idTipo" type="int"></element>
+			<element name="ip" type="string"></element>			
+			<element name="idObjeto" type="string"></element>
+			<element name="usuario" type="string" nillable="true"></element>
+		</sequence>
+	</complexType>
+  
+   <complexType name="InfoConsultaWS">
+      <sequence>
+  	
+          <element name="sistema" type="string"></element>
+          <element name="criterioSeleccion" type="string"></element>
+          <element name="nombreArchivo" type="string"></element>
+          <element name="cantRegistros" type="int"></element>
+          <element name="usuario" type="string"></element>
+          
+      </sequence>
+   </complexType>
+   
+   
+</schema>

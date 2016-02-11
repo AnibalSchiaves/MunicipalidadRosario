@@ -1,0 +1,48 @@
+<div tiles:fragment="form">
+	<div class="row form-group">
+		<div class="col-md-2">
+			<label>C&oacute;digo:</label>
+			<input th:if="${form.modo=='alta'}" id="codigo" class="form-control" maxlength="11" name="id" th:field="${form.id}" value="" type="text"/>		
+			<label th:if="${form.modo!='alta'}" name="codigo" th:text="${form.id}" value="" />
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-10">
+			<label>Descripci&oacute;n:</label>
+			<input id="descripcion" class="form-control" maxlength="25" name="descripcion" th:disabled="${form.modo=='eliminacion'}" th:field="${form.descripcion}" value="" type="text"/>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-3">
+			<label>Desc. Corta:</label>
+			<input id="desc_corta" class="form-control" maxlength="10" name="desc_corta" th:disabled="${form.modo=='eliminacion'}" th:field="${form.descCorta}" value="" type="text"/>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" tiles:fragment="script">
+	$('#form').bootstrapValidator({
+       	message: 'No es un valor válido',
+       	feedbackIcons: {
+           	valid: 'glyphicon glyphicon-ok',
+           	invalid: 'glyphicon glyphicon-remove',
+           	validating: 'glyphicon glyphicon-refresh'
+       	},
+       	fields: {
+       		descripcion: {
+           		validators: {
+                   	notEmpty: {
+                       	message: 'El campo descripción debe ser ingresado'
+                   	},
+               	}
+           	},
+           	id: {
+               	validators: {
+                   	notEmpty: {
+                       	message: 'El campo código debe ser ingresado'
+                   	},
+               	}
+           	}
+           	
+       	}
+       });
+</script>

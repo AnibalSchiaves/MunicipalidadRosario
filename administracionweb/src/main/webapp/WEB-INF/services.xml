@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+
+
+	<!-- SERVICIO WEB DE TRAMITES-->
+	
+	<jee:jndi-lookup id="wsTramitesweb" jndi-name="wsTramitesweb"/>
+											  
+	 <bean id="tramiteswebClient" class="ar.gov.rosario.administracionweb.ws.tramitesweb.client.TramiteswebClient">
+	
+       <property name="defaultUri" ref="wsTramitesweb" />
+   
+          
+        <property name="marshaller" ref="jaxb2Marshaller" />
+        <property name="unmarshaller" ref="jaxb2Marshaller" />
+             
+    </bean>
+    
+    <bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+    
+   		<property name="contextPath" value="ar.gov.rosario.administracionweb.ws.tramitesweb.model" />
+        
+    </bean>
+	
+		
+ 
+</beans>

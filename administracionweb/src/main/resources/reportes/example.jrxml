@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certificadoProvisorio" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="69ab1cbc-1043-48d9-9dab-f47b88844b4b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="4"/>
+	<property name="ireport.y" value="0"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Title"/>
+	<subDataset name="dataset1" uuid="9fb73ed7-64e6-478d-b288-2d013f9e170e"/>
+	<subDataset name="dataset2" uuid="cfe0e7a4-44e6-429a-96cb-4b1990302082"/>
+	<parameter name="imagePath" class="java.lang.String"/>
+	<parameter name="certificado" class="ar.gov.rosario.habilitaciones.vo.CertificadoVO"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="rubroGenerico" class="java.lang.String"/>
+	<field name="idRubro" class="java.lang.Integer"/>
+	<field name="idRubroGenerico" class="java.lang.Integer"/>
+	<field name="clave" class="java.lang.Integer"/>
+	<field name="valor" class="java.lang.String"/>
+	<field name="nivel" class="java.lang.Integer"/>
+	<background>
+		<band height="800"/>
+	</background>
+	<pageHeader>
+		<band height="365">
+			<image scaleImage="RealSize">
+				<reportElement x="10" y="10" width="77" height="74" uuid="0c505063-9705-4265-a0f0-99b9a5d143e6"/>
+				<imageExpression><![CDATA[$P{imagePath}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="93" y="31" width="449" height="21" uuid="cb1c85b3-9549-42d5-ba63-62ea22d5dc25"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Dirección ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="52" width="449" height="35" uuid="75c8eb04-acd4-41d8-8fcd-dfe347d25541"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Título]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="3" width="449" height="28" uuid="88a71c24-f32b-4457-8c6e-515931693b77"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DE ROSARIO]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="18"/>
+	</detail>
+	<pageFooter>
+		<band height="257" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

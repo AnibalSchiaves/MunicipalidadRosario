@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context path="/administracionweb">
+	
+	
+	<ResourceLink global="jdbc/administracionweb" name="ds/administracionwebdb" type="javax.sql.DataSource"/>
+	
+	<!-- Security -->
+	<ResourceLink global="config/ldap/server" name="ldap/server" type="java.lang.String"/>
+	
+	
+	<!--Gis  -->
+	<ResourceLink global="jdbc/gis10" name="ds/gisdb" type="javax.sql.DataSource"/>
+
+	<!--Servicios  -->
+	<ResourceLink 
+	    global="config/wsPersona" 
+	    name="wsPersona" 
+	    type="java.lang.String"/>
+	<ResourceLink 
+	    global="config/wsUbicacion" 
+	    name="wsUbicacion" 
+	    type="java.lang.String"/>
+	 
+	
+    <ResourceLink 
+	    global="config/wsTramitesweb" 
+	    name="wsTramitesweb" 
+	    type="java.lang.String"/>
+	    
+	<!-- Afip -->
+	<ResourceLink 
+	    global="config/fileNameCert" 
+	    name="fileNameCert" 
+	    type="java.lang.String"/>
+    
+	
+	<ResourceLink 
+	    global="config/urlAfip" 
+	    name="urlAfip" 
+	    type="java.lang.String"/>
+   
+
+</Context>

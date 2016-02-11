@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:tiles="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+  <head>
+	<title>administracionweb</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" />
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="all" />
+    <link href="../css/bootstrapValidator.min.css" th:href="@{/css/bootstrapValidator.min.css}" rel="stylesheet" media="all" />
+<!-- 
+    <link href="../css/bootstrap-theme.min.css" th:href="@{/css/bootstrap-theme.min.css}" rel="stylesheet" media="screen" />
+ -->
+    <link href="../css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet" media="screen" />
+
+    <link href="../css/bootstrap-datetimepicker.min.css" th:href="@{/css/bootstrap-datetimepicker.min.css}" rel="stylesheet" media="screen" />
+
+	<!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+    <!-- <link href="../css/jquery.fileupload-ui.css" th:href="@{/css/jquery.fileupload-ui.css}" rel="stylesheet" media="screen" />-->
+
+
+
+   <link href="../css/select2.css" th:href="@{/css/select2.css}" rel="stylesheet" media="screen" />
+   <link href="../css/select2-bootstrap.css" th:href="@{/css/select2-bootstrap.css}" rel="stylesheet" media="screen" />
+  <link href="../css/typeahead.js-bootstrap.css" th:href="@{/css/typeahead.js-bootstrap.css}" rel="stylesheet" media="screen" />
+  
+  <link href="../js/DataTables-1.10.7/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.css" 
+    th:href="@{/js/DataTables-1.10.7/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.css}" rel="stylesheet" media="screen" />
+   
+   <link href="../css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="all" />
+<!-- 
+ -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.js" th:src="@{/js/jquery.js}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}" ></script>
+    <script src="../js/bootstrapValidator.min.js" th:src="@{/js/bootstrapValidator.min.js}" ></script>
+
+    <script src="../js/tooltip.js" th:src="@{/js/tooltip.js}" ></script>
+    <script src="../js/bootstrap-datetimepicker.min.js" th:src="@{/js/bootstrap-datetimepicker.min.js}" ></script>
+    <script src="../js/locales/bootstrap-datetimepicker.es.js" th:src="@{/js/locales/bootstrap-datetimepicker.es.js}" ></script>
+     <script src="../js/modal.js" th:src="@{/js/modal.js}" ></script>
+     <script src="../js/alert.js" th:src="@{/js/alert.js}" ></script>
+
+    <script src="../js/jquery.validate.min.js" th:src="@{/js/jquery.validate.min.js}" ></script>
+    <!--<script src="../js/additional-methods.min.js" th:src="@{/js/additional-methods.min.js}" ></script>-->
+    
+    <script type="text/javascript" charset="UTF-8" src="../js/locales/messages_es.js" th:src="@{/js/locales/messages_es.js}" ></script>
+
+   <!--  <script src="../js/jquery.ui.widget.js" th:src="@{/js/jquery.ui.widget.js}" ></script>--> 
+	
+   
+	<script src="../js/select2.min.js" th:src="@{/js/select2.min.js}" ></script>
+	<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+     <!-- <script src="../js/query.iframe-transport.js" th:src="@{/js/jquery.iframe-transport.js}" ></script>--> 
+
+
+    <script src="../js/hogan.min.js" th:src="@{/js/hogan.min.js}" ></script>
+    <script src="../js/typeahead.min.js" th:src="@{/js/typeahead.min.js}" ></script>
+    <script src="../js/calles.js" th:src="@{/js/calles.js}" ></script>
+    
+    <script type="text/javascript" src="../js/DataTables-1.10.7/media/js/jquery.dataTables.js" th:src="@{/js/DataTables-1.10.7/media/js/jquery.dataTables.js}" ></script>
+    <script type="text/javascript" src="../js/DataTables-1.10.7/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.min.js" th:src="@{ /js/DataTables-1.10.7/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.min.js}" ></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+    <style type="text/css">
+    
+.correctCase {
+    text-transform: lowercase;
+}
+
+.correctCase:first-letter {
+    text-transform: uppercase;
+}
+
+.container-fluid {
+	    padding-left: 15px;
+	    padding-right: 15px;
+}
+
+.has-feedback .form-control-feedback {
+    right: 10px;
+}
+
+/*
+    	body { padding-top: 52px; }
+input {
+    text-transform: lowercase;
+}
+
+input:first-letter {
+    text-transform: uppercase;
+}
+*/
+	#controles div
+		{
+			float:right;
+			padding-left: 1%;
+		}
+	fieldset 
+	{
+		padding: 10px 15px;
+	}
+	#acciones-table li
+	{
+		list-style:none;
+		display: inline-block;
+		text-align: left;
+		padding-right: 2%;
+	}
+    </style>
+
+  </head>
+
+  <body>
+  
+  <div th:replace="/layouts/menu.html :: menu">
+  </div>
+  
+  
+	
+
+	
+
+
+<script type="text/javascript">
+//<![CDATA[
+           
+$(function() {
+
+$('#salir').tooltip();
+
+});
+
+function redirect(url) {
+	window.location=url;
+}
+
+//]]>
+</script>
+
+
+
+
+<!--  -->
+
+	<div class="container" tiles:include="body">
+          <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->      
+          <!-- At runtime, the body of this <div> will be substituted by -->
+          <!-- Tiles in order to create the final HTML page that will be -->
+          <!-- sent to the browser.                                      -->
+          <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->      
+          
+          BODY PAGE GOES HERE!
+	
+<!-- ##################################### -->
+
+	</div>
+		
+	 
+	  
+	<hr />
+	<footer class="hidden-print">
+		<h6 class="text-center">&copy; Desarrollado con software libre por la Municipalidad de Rosario | Buenos Aires 711 | Rosario | Santa Fe | Argentina | 2014</h6>
+		<h6  class="text-center">Se recomienda el uso con navegadores Chrome, Firefox e Internet Explorer 9 o superior</h6>
+	</footer>
+	
+	
+	
+  
+	</body>
+	
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="default" class="org.apache.log4j.ConsoleAppender">
+    <param name="target" value="System.out"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%p] %d{dd MMM hh:mm:ss.SSS aa} %t [%c]%n%m%n%n"/>
+    </layout>
+  </appender>
+  
+
+  
+  <appender name="SyslogInfoLogFile"
+	class="org.apache.log4j.DailyRollingFileAppender">
+	<param name="File" value="${tomcat.logs.dir}/administracionweb/administracionweb.log"/>
+	<param name="Append" value="true"/>
+	<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+	<layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="[%p] %d{dd MMM hh:mm:ss.SSS aa} %t [%c]%n%m%n%n"/>
+	</layout>
+</appender>
+  
+    <appender name="HibernatelogInfoLogFile"
+	class="org.apache.log4j.DailyRollingFileAppender">
+	<param name="File" value="${tomcat.logs.dir}/administracionweb/hibernate.log"/>
+	<param name="Append" value="true"/>
+	<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+	<layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="[%p] %d{dd MMM hh:mm:ss.SSS aa} %t [%c]%n%m%n%n"/>
+	</layout>
+</appender>
+
+
+ <logger name="ar.gov.rosario.administracionweb">
+   <level value="error" />
+    <appender-ref ref="SyslogInfoLogFile" />
+    
+ </logger>
+ 
+ <logger name="org.hibernate">
+   <level value="error" />
+    <appender-ref ref="HibernatelogInfoLogFile" />
+    
+ </logger>
+ 
+  <logger name="org.springframework.ws.client.MessageTracing.sent">
+   <level value="error" />
+    <appender-ref ref="SyslogInfoLogFile" />
+    
+ </logger>
+  <logger name="org.springframework.ws.client.MessageTracing.received">
+   <level value="error" />
+    <appender-ref ref="SyslogInfoLogFile" />
+    
+ </logger>
+
+  <root>
+    <level value="error" />
+    <appender-ref ref="SyslogInfoLogFile" />
+     
+  </root>
+  
+  
+
+  
+</log4j:configuration>

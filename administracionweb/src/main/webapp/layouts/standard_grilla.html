@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:tiles="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+  <head>
+	<title>Administraci&oacute;n Web</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" />
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="all" />
+    <link href="../css/bootstrapValidator.min.css" th:href="@{/css/bootstrapValidator.min.css}" rel="stylesheet" media="all" />
+<!-- 
+    <link href="../css/bootstrap-theme.min.css" th:href="@{/css/bootstrap-theme.min.css}" rel="stylesheet" media="screen" />
+ -->
+    <link href="../css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet" media="screen" />
+
+    <link href="../css/bootstrap-datetimepicker.min.css" th:href="@{/css/bootstrap-datetimepicker.min.css}" rel="stylesheet" media="screen" />
+
+	<!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+    <!-- <link href="../css/jquery.fileupload-ui.css" th:href="@{/css/jquery.fileupload-ui.css}" rel="stylesheet" media="screen" />-->
+
+
+
+   <link href="../css/select2.css" th:href="@{/css/select2.css}" rel="stylesheet" media="screen" />
+   <link href="../css/select2-bootstrap.css" th:href="@{/css/select2-bootstrap.css}" rel="stylesheet" media="screen" />
+  <link href="../css/typeahead.js-bootstrap.css" th:href="@{/css/typeahead.js-bootstrap.css}" rel="stylesheet" media="screen" />
+  
+  <link href="../js/DataTables-1.10.7/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.css" 
+    th:href="@{/js/DataTables-1.10.7/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.css}" rel="stylesheet" media="screen" />
+  <link href="../js/DataTables-1.10.7/extensions/Responsive/css/dataTables.responsive.css" 
+    th:href="@{/js/DataTables-1.10.7/extensions/Responsive/css/dataTables.responsive.css}" rel="stylesheet" media="screen" />
+    
+   <link href="../css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="all" />
+<!-- 
+ -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.js" th:src="@{/js/jquery.js}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}" ></script>
+    <script src="../js/bootstrapValidator.min.js" th:src="@{/js/bootstrapValidator.min.js}" ></script>
+
+    <script src="../js/tooltip.js" th:src="@{/js/tooltip.js}" ></script>
+    <script src="../js/bootstrap-datetimepicker.min.js" th:src="@{/js/bootstrap-datetimepicker.min.js}" ></script>
+    <script src="../js/locales/bootstrap-datetimepicker.es.js" th:src="@{/js/locales/bootstrap-datetimepicker.es.js}" ></script>
+     <script src="../js/modal.js" th:src="@{/js/modal.js}" ></script>
+     <script src="../js/alert.js" th:src="@{/js/alert.js}" ></script>
+
+    <script src="../js/jquery.validate.min.js" th:src="@{/js/jquery.validate.min.js}" ></script>
+    <!--<script src="../js/additional-methods.min.js" th:src="@{/js/additional-methods.min.js}" ></script>-->
+    
+    <script type="text/javascript" charset="UTF-8" src="../js/locales/messages_es.js" th:src="@{/js/locales/messages_es.js}" ></script>
+
+   <!--  <script src="../js/jquery.ui.widget.js" th:src="@{/js/jquery.ui.widget.js}" ></script>--> 
+	
+   
+	<script src="../js/select2.min.js" th:src="@{/js/select2.min.js}" ></script>
+	<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+     <!-- <script src="../js/query.iframe-transport.js" th:src="@{/js/jquery.iframe-transport.js}" ></script>--> 
+
+
+    <script src="../js/hogan.min.js" th:src="@{/js/hogan.min.js}" ></script>
+    <script src="../js/typeahead.min.js" th:src="@{/js/typeahead.min.js}" ></script>
+    <script src="../js/calles.js" th:src="@{/js/calles.js}" ></script>
+    
+    <script type="text/javascript" src="../js/DataTables-1.10.7/media/js/jquery.dataTables.js" th:src="@{/js/DataTables-1.10.7/media/js/jquery.dataTables.js}" ></script>
+    <script type="text/javascript" src="../js/DataTables-1.10.7/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.min.js" th:src="@{ /js/DataTables-1.10.7/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.min.js}" ></script>
+    <script type="text/javascript" src="../js/DataTables-1.10.7/extensions/Responsive/js/dataTables.responsive.min.js" th:src="@{ /js/DataTables-1.10.7/extensions/Responsive/js/dataTables.responsive.min.js}" ></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js" th:src="@{ /js/jquery-ui.min.js}" ></script>
+    <script type="text/javascript" src="../js/jquery.ui-contextmenu.min.js" th:src="@{ /js/jquery.ui-contextmenu.min.js}" ></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+    <style type="text/css">
+    
+.correctCase {
+    text-transform: lowercase;
+}
+
+.correctCase:first-letter {
+    text-transform: uppercase;
+}
+
+.container-fluid {
+	    padding-left: 15px;
+	    padding-right: 15px;
+}
+
+.has-feedback .form-control-feedback {
+    right: 10px;
+}
+.ui-contextmenu
+{
+	background-color: #fff;
+	border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 5px;
+    padding: 0px;
+}
+.ui-contextmenu li
+{
+	list-style: none;
+	cursor:pointer;
+	padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+	
+}
+.ui-contextmenu li:hover
+{
+	list-style: none;
+	cursor:pointer;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 5px;
+    padding-bottom: 5px;
+	background-color: #b9d2e1;
+}
+
+/*
+    	body { padding-top: 52px; }
+input {
+    text-transform: lowercase;
+}
+
+input:first-letter {
+    text-transform: uppercase;
+}
+*/
+	#controles div
+		{
+			float:right;
+			padding-left: 1%;
+		}
+	fieldset 
+	{
+		padding: 10px 15px;
+	}
+	#acciones-table li
+	{
+		list-style:none;
+		display: inline-block;
+		text-align: left;
+		padding-right: 2%;
+	}
+	.dropdown-submenu {
+	    position: relative;
+	}
+	
+	.dropdown-submenu>.dropdown-menu {
+	    top: 0;
+	    left: 100%;
+	    margin-top: -6px;
+	    margin-left: -1px;
+	    -webkit-border-radius: 0 6px 6px 6px;
+	    -moz-border-radius: 0 6px 6px;
+	    border-radius: 0 6px 6px 6px;
+	}
+	
+	.dropdown-submenu:hover>.dropdown-menu {
+	    display: block;
+	}
+	
+	.dropdown-submenu>a:after {
+	    display: block;
+	    content: " ";
+	    float: right;
+	    width: 0;
+	    height: 0;
+	    border-color: transparent;
+	    border-style: solid;
+	    border-width: 5px 0 5px 5px;
+	    border-left-color: #ccc;
+	    margin-top: 5px;
+	    margin-right: -10px;
+	}
+	
+	.dropdown-submenu:hover>a:after {
+	    border-left-color: #fff;
+	}
+	
+	.dropdown-submenu.pull-left {
+	    float: none;
+	}
+	
+	.dropdown-submenu.pull-left>.dropdown-menu {
+	    left: -100%;
+	    margin-left: 10px;
+	    -webkit-border-radius: 6px 0 6px 6px;
+	    -moz-border-radius: 6px 0 6px 6px;
+	    border-radius: 6px 0 6px 6px;
+	}
+    </style>
+
+  </head>
+
+  <body>
+  
+  <div th:replace="/layouts/menu.html :: menu">
+  </div>
+  
+  
+	
+
+	
+
+
+<script type="text/javascript">
+//<![CDATA[
+           
+$(function() {
+
+$('#salir').tooltip();
+
+});
+
+function redirect(url) {
+	window.location=url;
+}
+
+//]]>
+</script>
+
+
+
+
+	<div class="container">
+			<div class="page-header">
+				<h2 th:text="${tituloGrilla}">ABM</h2>
+			</div>
+			
+			<div th:if="${exitoGuardar}" th:text="${#messages.msg('validacion.exitoGuardar')}" id="mensajes" class="alert alert-success" role="alert"></div>
+			<div th:if="${exitoEliminar}" th:text="${#messages.msg('validacion.exitoEliminar')}" id="mensajes" class="alert alert-success" role="alert"></div>
+			<table id="listado-table" class="table table-condensed">
+				<thead>
+					<tr class="table-header" tiles:include="header">
+					</tr>
+				</thead>
+				<tbody class="table-body" tiles:include="body">
+				</tbody>
+				
+			</table>
+          	<script type="text/javascript" th:inline="javascript">
+				//<![CDATA[
+				var urlBase = /*[[${#httpServletRequest.contextPath}]]*/ '';
+				$(document).ready(function() {
+				    $('#listado-table').DataTable({
+				    	"language": {
+				    		url: urlBase + '/js/locales/Spanish.json'
+					    },
+					    "lengthChange": false,
+					    "order": [[1,'asc']],
+					    "dom":'<"#controles"<"#nuevo"><"#search"f>>tip',
+					    "initComplete": agregarButtonNuevo,
+					    "responsive":true
+				    });
+				    $(document).contextmenu({
+				        delegate: ".dataTable td",
+				        menu: [
+				          {title: "Editar", cmd: "editar"},
+				          {title: "Eliminar", cmd: "eliminar"}
+				    	],
+				    	select: function(event, ui) {
+				    		var coltext = ui.target.text();
+				    		var colvindex = ui.target.parent().children().index(ui.target);
+				    		var id = $(ui.target.parent().children()[0]).html();
+				    		switch(ui.cmd){
+				    			case "editar":
+				    				redirect("editar.htm?id="+id);
+				    				break;
+				    			case "eliminar":
+				    				redirect("confirmarEliminar.htm?id="+id);
+				    				break;
+				    		}
+				    	}
+				    });
+				} );
+				function agregarButtonNuevo() {
+					$("#nuevo").html("<input type='button' value='Nuevo' class='btn btn-primary' onclick='redirectNuevo()' />");
+				}
+				function redirectNuevo() {
+					window.location="nuevo.htm";
+				}
+				//]]>
+			</script>
+	</div>
+		
+	 
+	  
+	<hr />
+	<footer class="hidden-print">
+		<h6 class="text-center">&copy; Desarrollado con software libre por la Municipalidad de Rosario | Buenos Aires 711 | Rosario | Santa Fe | Argentina | 2014</h6>
+		<h6  class="text-center">Se recomienda el uso con navegadores Chrome, Firefox e Internet Explorer 9 o superior</h6>
+	</footer>
+	
+	
+	
+  
+	</body>
+	
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:tiles="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+    <nav role="navigation" class="navbar navbar-inverse hidden-print" th:fragment="menu">
+    <style type="text/css">
+    	.dropdown-submenu {
+	    position: relative;
+	}
+	
+	.dropdown-submenu>.dropdown-menu {
+	    top: 0;
+	    left: 100%;
+	    margin-top: -6px;
+	    margin-left: -1px;
+	    -webkit-border-radius: 0 6px 6px 6px;
+	    -moz-border-radius: 0 6px 6px;
+	    border-radius: 0 6px 6px 6px;
+	}
+	
+	.dropdown-submenu:hover>.dropdown-menu {
+	    display: block;
+	}
+	
+	.dropdown-submenu>a:after {
+	    display: block;
+	    content: " ";
+	    float: right;
+	    width: 0;
+	    height: 0;
+	    border-color: transparent;
+	    border-style: solid;
+	    border-width: 5px 0 5px 5px;
+	    border-left-color: #ccc;
+	    margin-top: 5px;
+	    margin-right: -10px;
+	}
+	
+	.dropdown-submenu:hover>a:after {
+	    border-left-color: #fff;
+	}
+	
+	.dropdown-submenu.pull-left {
+	    float: none;
+	}
+	
+	.dropdown-submenu.pull-left>.dropdown-menu {
+	    left: -100%;
+	    margin-left: 10px;
+	    -webkit-border-radius: 6px 0 6px 6px;
+	    -moz-border-radius: 6px 0 6px 6px;
+	    border-radius: 6px 0 6px 6px;
+	}
+    </style>
+
+	<div class="header-muni">
+    <div class="container">
+    <div class="row">
+        	<div class="col-md-4">
+            	<a href="http://www.bluerosario.gob.ar" class="navbar-brand" data-toggle="tooltip" data-placement="left" title="Ir a www.rosario.gob.ar">
+	    		<img src="../img/logo.png" th:src="@{/img/logo.png}" class="img-responsive " />
+                </a>
+			</div>
+            <div class="col-md-8"><h1>Administraci&oacute;n Web</h1></div>
+		</div> 
+       </div>
+	</div>        
+                   
+	  <div class="navbar-header">
+	    <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </button>
+	  </div>
+	
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse navbar-ex1-collapse">
+	    <ul class="nav navbar-nav">
+		  <li class="dropdown">
+	      	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon-edit icon-2x"></i><br/>ABMs<span class="caret"></span></a>
+	      	<ul class="dropdown-menu multi-level">
+	            <li class="dropdown-submenu"><a class="dropdown-toggle" data-toggle="dropdown">Estructura de Gobierno</a>
+	            	<ul class="dropdown-menu">
+	            		<li><a href="/estructuratipo/init.htm" th:href="@{/estructuratipo/init.htm}">Tipos de Estructura</a></li>
+	            		<li><a href="/contactoestructura/init.htm" th:href="@{/contactoestructura/init.htm}">Contactos Estructura</a></li>
+	            	</ul>
+	            </li>
+	        </ul>
+	      </li>
+	    </ul>
+	    <ul class="nav navbar-nav navbar-right text-center">
+	      <li><a href="home.htm" th:href="@{/}"><i class="icon-home icon-2x"></i><br/>Inicio</a></li>
+<!-- 
+	      <li><a href="cuit.htm" th:href="@{/cuit.htm}"><i class="icon-home icon-2x"></i><br/>Inicio</a></li>
+	      <li><a href="ext/home.htm" th:href="@{/ext/init1.htm(cuitPrincipal='20-27092949-5',listCuitRel='20-04692983-8,30-54634800-4,30-74993392-2')}">Inicio</a></li>
+ -->
+	      
+	      <li><a href="#" th:href="@{/faq.htm}"><i class="icon-question icon-2x"></i><br/>Ayuda</a></li>
+	      <li><a href="mailto:administracionweb@rosario.gov.ar?subject=Contacto&nbsp;desde&nbsp;tr&aacute;mite&nbsp;de&nbsp;habilitaci&oacute;n"><i class="icon-envelope icon-2x"></i><br/>Contacto</a></li> 
+		  
+	      <!--  <li><a href="#" th:href="@{/admin/verificacionDatos/consulta/init.htm}"><i class="icon-cogs icon-2x"></i><br />Administraci&oacute;n</a></li>-->
+		<!--  	<li id="salir" th:if="${@administracionwebManager != null and @administracionwebManager.solicitante != null}"  data-toggle="tooltip" data-placement="top" title="Salir"><a href="/closeSession.htm" th:href="@{/closeSession.htm}">
+			  	<i class="icon-share icon-2x"></i><br/>
+				Salir</a>
+			</li>-->
+		  <li id="salir" sec:authorize="isAuthenticated()" data-toggle="tooltip" data-placement="top" title="Salir"><a href="/j_spring_security_logout" th:href="@{/j_spring_security_logout}">
+		  	<i class="icon-share icon-2x"></i><br/>
+			<span sec:authentication="name">Bob</span></a>
+		  </li>
+			
+	    </ul>
+	  </div><!-- /.navbar-collapse -->
+
+	</nav>
+</html>

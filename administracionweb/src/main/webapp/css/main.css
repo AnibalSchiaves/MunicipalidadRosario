@@ -1,0 +1,245 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body {
+
+	font-family: "Verdana", Arial, sans-serif;
+	
+}
+
+/* big top */
+
+@charset "utf-8";
+/* CSS Document */
+
+
+.header-muni {
+	
+	background: #12679B;
+	color:#fff; 
+	padding:5px;	
+}
+
+.header-muni a{
+	
+	display:block;
+	padding:0;
+	margin:0;
+	width:266px;
+	height:66px;
+
+}
+
+.page-header {
+	
+	margin:20px 0;
+	padding-bottom:5px;	
+	
+}
+
+
+/* Jumbotrons
+-------------------------------------------------- */
+
+/* Base class
+------------------------- */
+.jumbotron {
+	
+  position: relative;
+  padding: 10px;
+  color: #fff;
+  text-align: center; 
+  text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+  background: #12679B; /* Old browsers */
+  
+
+}
+
+
+
+.jumbotron h1 {
+	
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+/*
+
+.navbar-brand {
+	
+	padding:0;
+	
+}
+
+*/
+
+
+
+legend {
+	
+	color: #ffffff;
+	line-height:25px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	padding: 4px 0 4px 24px;
+	margin: 0 0 0 5px;
+	width:40%;
+	font-size: 120%;
+	background: #12679B; /* Old browsers */
+	
+	
+	/* Fondo */
+
+
+}
+
+
+
+fieldset {
+	
+	border:1px solid #12679B;
+	margin:10px 0 10px 0;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	padding:10px 15px 0 15px;
+
+}
+
+form {
+	
+	margin:0;
+	
+}
+
+/********** colores H ***********/
+ 
+#myModalLabel {
+	
+	color: #12679B;
+	line-height:20px;
+	font-size:90%;
+	}
+	
+	
+h2 {
+	
+	color: #12679B;
+	font-size:160%;
+	
+}
+
+h4 {
+	
+	color: #12679B;
+	
+}
+	
+	
+
+	
+	
+/* Focus */ 
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	
+	
+    border-color: #12679B;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(231, 127, 0, 0.6);
+    outline: 0 none;
+}
+
+
+.form-search input, .form-inline input, .form-horizontal input, .form-search textarea, .form-inline textarea, .form-horizontal textarea, .form-search select, .form-inline select, .form-horizontal select, .form-search .help-inline, .form-inline .help-inline, .form-horizontal .help-inline, .form-search .uneditable-input, .form-inline .uneditable-input, .form-horizontal .uneditable-input, .form-search .input-prepend, .form-inline .input-prepend, .form-horizontal .input-prepend, .form-search .input-append, .form-inline .input-append, .form-horizontal .input-append {
+    
+    margin-bottom: 8px;
+  
+}
+
+
+.btn-primary {
+	
+	background-color: #12679B;
+	background-image: -moz-linear-gradient(center top , #12679B, #16597F);
+	 background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#12679B), color-stop(100%,#16597F)); /* Chrome,Safari4+ */
+	background-repeat: repeat-x;
+	border-color: #12679B;
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn:hover {
+	
+    background-color: #12679B;
+	background-image: -moz-linear-gradient(center top , #12679B, #16597F);
+	 background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#12679B), color-stop(100%,#16597F)); /* Chrome,Safari4+ */
+    background-position: 0 0; 
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-position 0.1s linear 0s;
+}
+
+
+/* Nav */
+
+ul.nav {
+	
+	margin:0;
+	
+}
+
+.nav-tabs li a {
+	color: #12679B;
+	
+}
+
+
+/* Tabla */
+
+.table thead > tr > th {
+    background: none repeat scroll 0 0 #B9D2E1;
+    border-bottom: 1px solid #165A82;
+    border-right: 2px solid #FFFFFF;
+    color: #14608B;
+    vertical-align: bottom;
+}
+
+
+/* FAQ */
+
+.faq {
+	
+	
+}
+
+.faq dt {
+	
+	margin-bottom:6px;
+	color: #14608B;
+	
+}
+
+.faq dd {
+	
+	margin-bottom:15px;
+	
+}
+
+.faq dd ul {
+	
+	margin:10px 0 10px 20px;
+	
+}
+
+.faq dd ul li {
+	
+	margin:0 0 3px 0;
+	
+}
+	
+	
+
+
+	
